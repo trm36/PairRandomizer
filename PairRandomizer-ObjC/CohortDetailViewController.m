@@ -33,7 +33,7 @@ static NSString *cellID = @"cellID";
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"DevMountain iOS 3";
+    self.title = [NSString stringWithFormat:@"DevMountain %@", self.cohort.name];
     
     UIToolbar *toolbar = [UIToolbar new];
     [self.view addSubview:toolbar];
@@ -71,6 +71,7 @@ static NSString *cellID = @"cellID";
     [super viewWillAppear:animated];
     
     self.randomizedStudents = [self.cohort randomize];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

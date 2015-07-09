@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Cohort" representedClassName="Cohort" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Student" inverseName="cohort" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cohort" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cohort" inverseName="students" inverseEntity="Cohort" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cohort" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Student" positionX="-54" positionY="-9" width="128" height="75"/>
+    </elements>
+</model>
